@@ -1,0 +1,6 @@
+import{ExternalInteractorBase as o,isInArray as t,getDistance as i}from"tsparticles-engine";class Slow{constructor(){this.factor=3;this.radius=200}load(o){if(o){void 0!==o.factor&&(this.factor=o.factor);void 0!==o.radius&&(this.radius=o.radius)}}}class
+Slower extends o{constructor(o){super(o)}clear(o,t,i){o.slow.inRange&&!i||(o.slow.factor=1)}init(){const o=this.container,t=o.actualOptions.interactivity.modes.slow;t&&(o.retina.slowModeRadius=t.radius*o.retina.pixelRatio)}async interact(){}isEnabled(o){var
+i;const n=this.container,a=n.interactivity.mouse,s=(null!==(i=null===o||void 0===o?void 0:o.interactivity)&&void 0!==i?i:n.actualOptions.interactivity).events;return s.onHover.enable&&!!a.position&&t("slow",s.onHover.mode)}loadModeOptions(o,...t){o.slow||(o.slow=new
+Slow);for(const i of t)o.slow.load(null===i||void 0===i?void 0:i.slow)}reset(o){o.slow.inRange=false;const t=this.container,n=t.actualOptions,a=t.interactivity.mouse.position,s=t.retina.slowModeRadius,e=n.interactivity.modes.slow;if(!e||!s||s
+<0||!a)return;const
+    r=o.getPosition(),l=i(a,r),c=l/s,d=e.factor;if(l<=s){o.slow.inRange=true;o.slow.factor=c/d}}}async function loadExternalSlowInteraction(o){await o.addInteractor( "externalSlow",(o=>new Slower(o)))}export{Slow,loadExternalSlowInteraction}; //# sourceMappingURL=index.js.map
