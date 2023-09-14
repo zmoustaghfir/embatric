@@ -1,0 +1,2 @@
+class CircleDrawer{draw(a,e,i){e.circleRange||(e.circleRange={min:0,max:2*Math.PI});const c=e.circleRange;a.arc(0,0,i,c.min,c.max,false)}getSidesCount(){return 12}particleInit(a,e){var i;const c=e.shapeData,n=null!==(i=null===c||void 0===c?void 0:c.angle)&&void
+0!==i?i:{max:360,min:0};e.circleRange="object"!==typeof n?{min:0,max:n*Math.PI/180}:{min:n.min*Math.PI/180,max:n.max*Math.PI/180}}}async function loadCircleShape(a){await a.addShape("circle",new CircleDrawer)}export{loadCircleShape}; //# sourceMappingURL=index.js.map
