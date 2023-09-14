@@ -1,4 +1,0 @@
-import{ExternalInteractorBase as e}from"tsparticles-engine";class Remove{constructor(){this.quantity=2}get particles_nb(){return this.quantity}set particles_nb(e){this.quantity=e}load(e){var t;if(!e)return;const o=null!==(t=e.quantity)&&void 0!==t?t:e.particles_nb;void
-0!==o&&(this.quantity=o)}}class Remover extends e{constructor(e){super(e);this.handleClickMode=e=>{const t=this.container,o=t.actualOptions;if(!o.interactivity.modes.remove||"remove"!==e)return;const n=o.interactivity.modes.remove.quantity;t.particles.removeQuantity(n)}}clear(){}init(){}async
-interact(){}isEnabled(){return true}loadModeOptions(e,...t){e.remove||(e.remove=new Remove);for(const o of t)e.remove.load(null===o||void 0===o?void 0:o.remove)}reset(){}}function loadExternalRemoveInteraction(e){e.addInteractor("externalRemove",(e=>new
-Remover(e)))}export{Remove,loadExternalRemoveInteraction}; //# sourceMappingURL=index.js.map
