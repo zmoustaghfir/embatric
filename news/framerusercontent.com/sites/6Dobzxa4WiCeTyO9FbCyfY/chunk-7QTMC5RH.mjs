@@ -1,2 +1,0 @@
-var a=t=>({bodyClassName:"framer-body-augiA20Il",breakpoints:[{hash:"72rtr7",mediaQuery:"(min-width: 1200px)"},{hash:"yuindc",mediaQuery:"(min-width: 810px) and (max-width: 1199px)"},{hash:"6zzg87",mediaQuery:"(max-width: 809px)"}],elements:{},title:"Robotics Club Embatric",viewport:"width=device-width"}),o=a,d=1,n={exports:{metadataVersion:{type:"variable",annotations:{framerContractVersion:"1"}},default:{type:"variable",annotations:{framerContractVersion:"1"}},__FramerMetadata__:{type:"variable"}}};export{o as a,d as b,n as c};
-//# sourceMappingURL=chunk-7QTMC5RH.mjs.map
