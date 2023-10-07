@@ -1,8 +1,0 @@
-import{clamp as e,getRandom as i}from"tsparticles-engine";function checkDestroy(e,i,s,o){switch(e.options.size.animation.destroy){case"max":i>=o&&e.destroy();break;case"min":i
-<=s&&e.destroy();break}}function updateSize(i,s){var o,a,t,n,l;const z=(null!==(o=i.size.velocity)&&void
-    0!==o?o:0)*s.factor,d=i.size.min,r=i.size.max,c=null!==(a=i.size.decay)&&void 0!==a?a:1;if(!(i.destroyed||!i.size.enable||(null!==(t=i.size.maxLoops)&&void 0!==t?t:0)>0&&(null!==(n=i.size.loops)&&void 0!==n?n:0)>(null!==(l=i.size.maxLoops)&&void 0!==l?l:0))){switch(i.size.status){case"increasing":if(i.size.value>=r){i.size.status="decreasing";i.size.loops||(i.size.loops=0);i.size.loops++}else i.size.value+=z;break;case"decreasing":if(i.size.value
-    <=d){i.size.status="increasing"
-        ;i.size.loops||(i.size.loops=0);i.size.loops++}else i.size.value-=z}i.size.velocity&&1!==c&&(i.size.velocity*=c);checkDestroy(i,i.size.value,d,r);i.destroyed||(i.size.value=e(i.size.value,d,r))}}class SizeUpdater{init(e){var s;const o=e.container,a=e.options.size,t=a.animation;if(t.enable){e.size.velocity=(null!==(s=e.retina.sizeAnimationSpeed)&&void
-        0!==s?s:o.retina.sizeAnimationSpeed)/100*o.retina.reduceFactor;t.sync||(e.size.velocity*=i())}}isEnabled(e){var i,s,o,a;return!e.destroyed&&!e.spawning&&e.size.enable&&((null!==(i=e.size.maxLoops)&&void 0!==i?i:0)<=0||(null!==(s=e.size.maxLoops)&&void
-        0!==s?s:0)>0&&(null!==(o=e.size.loops)&&void 0!==o?o:0)
-        <(null!==(a=e.size.maxLoops)&&void 0!==a?a:0))}reset(e){e.size.loops=0}update(e,i){this.isEnabled(e)&&updateSize(e,i)}}async function loadSizeUpdater(e){await e.addParticleUpdater( "size",(()=>new SizeUpdater))}export{loadSizeUpdater}; //# sourceMappingURL=index.js.map
