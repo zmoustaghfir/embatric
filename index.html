@@ -6162,6 +6162,26 @@
 </head>
 
 <body class="framer-body-augiA20Il">
+	<!-- Preloader	-->
+	<div id="preloader" style="background: #fff; height: 100vh; width: 100%; z-index: 100; position: fixed; display: flex; flex-direction: column; justify-content: center; align-items: center; font-family: 'Lato', sans-serif;" onclick="console.log('Script executed');">
+    <img src="preloader/logo.png" alt="Logo" style="width: 50%; height: auto; max-width: 30%; max-height: auto;">
+    <img src="preloader/infinity.gif" alt="Loading" style="max-width: 20%; height: auto;">
+    <p style="text-align: center; color: #333; font-size: 24px; margin-top: 20px;">INNOVATION-is-Loading...</p>
+    <script>
+        var loader = document.getElementById("preloader");
+        window.addEventListener("load", function(){
+            setTimeout(function() {
+                loader.style.display = "none";
+            }, 1000); // 1000 milliseconds = 1 second
+        });
+    </script>
+</div>
+
+
+
+
+
+
     <script async="" src="https://events.framer.com/script" data-fid="90226fb3edc964182c770610e8a686c750c40d4bc66bc8e07c5d90c08922e305"></script>
 
 
