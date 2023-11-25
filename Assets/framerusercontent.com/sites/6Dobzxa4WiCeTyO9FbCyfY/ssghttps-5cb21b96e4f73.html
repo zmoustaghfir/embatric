@@ -1,7 +1,0 @@
-const e=1/60*1e3;const t="undefined"!==typeof performance?()=>performance.now():()=>Date.now();const n="undefined"!==typeof window?e=>window.requestAnimationFrame(e):n=>setTimeout((()=>n(t())),e);function createRenderStep(e){let t=[];let n=[];let s=0;let
-r=false;let c=false;const o=new WeakSet;const a={schedule:(e,c=false,a=false)=>{const l=a&&r;const f=l?t:n;c&&o.add(e);if(-1===f.indexOf(e)){f.push(e);l&&r&&(s=t.length)}return e},cancel:e=>{const t=n.indexOf(e);-1!==t&&n.splice(t,1);o.delete(e)},process:l=>{if(r)c=true;else{r=true;[t,n]=[n,t];n.length=0;s=t.length;if(s)for(let
-n=0;n
-<s;n++){const s=t[n];s(l);if(o.has(s)){a.schedule(s);e()}}r=false;if(c){c=false;a.process(l)}}}};return a}const s=40;let r=true;let c=false;let o=false;const a={delta:0,timestamp:0};const l=[ "read", "update", "preRender", "render", "postRender"];const
-    f=l.reduce(((e,t)=>{e[t]=createRenderStep((()=>c=true));return e}),{});const u=l.reduce(((e,t)=>{const n=f[t];e[t]=(e,t=false,s=false)=>{c||startLoop();return n.schedule(e,t,s)};return e}),{});const d=l.reduce(((e,t)=>{e[t]=f[t].cancel;return e}),{});const i=l.reduce(((e,t)=>{e[t]=()=>f[t].process(a);return
-    e}),{});const processStep=e=>f[e].process(a);const processFrame=t=>{c=false;a.delta=r?e:Math.max(Math.min(t-a.timestamp,s),1);a.timestamp=t;o=true;l.forEach(processStep);o=false;if(c){r=false;n(processFrame)}};const startLoop=()=>{c=true;r=true;o||n(processFrame)};const
-    getFrameData=()=>a;export{d as cancelSync,u as default,i as flushSync,getFrameData}; //# sourceMappingURL=index.mjs.map
