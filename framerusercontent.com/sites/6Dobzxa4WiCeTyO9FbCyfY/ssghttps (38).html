@@ -1,0 +1,93 @@
+var e, t; import { jsx as o, jsxs as l } from "react/jsx-runtime"; import {
+addPropertyControls as r, ControlType as i, // @ts-ignore Internal function
+useLocaleInfo as a, withCSS as n } from "framer"; import { useId as s, useRef as
+u, useState as d } from "react"; import { getBorderStyle as c, borderControls as
+p } from
+"https://framerusercontent.com/modules/cuKUFdzXlhvw8OVOBeAc/VOfaY9LHiTLKveiePI7P/border.js";
+import { getFocusStyle as f, focusControls as m } from
+"https://framerusercontent.com/modules/9muYaW1MvHoRQJ0P7dkP/V2GVvLqiMxXRSxszkCSa/focus.js";
+import { getHoverStyle as h, hoverControls as v } from
+"https://framerusercontent.com/modules/YfmtnpWjJrP37sQ18QUZ/9Y2P24U2SBIbf2fPVsOX/hover.js";
+import { getPaddingStyle as g, paddingControls as y } from
+"https://framerusercontent.com/modules/wjZLfSMaP1TvJDu5PCwr/6SPClu354QJPCp6Xj5C0/padding.js";
+import { getRadiusStyle as b, radiusControls as w } from
+"https://framerusercontent.com/modules/N6MwtHbWoiZJNn1xpqxu/58OHv7BfCzgeBhiv1TYu/radius.js";
+let C = "framer-locale-picker"; function x(e) { return "number" == typeof e ?
+`${e}px` : e; } function j({ type: e, color: t, image: l, size: r }) { return
+"custom" === e && l ? /*#__PURE__*/o("img", { ...l, width: r, height: r }) :
+/*#__PURE__*/o("svg", { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 256
+256", width: r, height: r, fill: t, children: /*#__PURE__*/o("path", { d:
+"M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm87.63,96H175.8c-1.41-28.46-10.27-55.47-25.12-77A88.2,88.2,0,0,1,215.63,120ZM128,215.89c-18.73-20.27-30.09-49-31.77-79.89h63.54C158.09,166.87,146.73,195.62,128,215.89ZM96.23,120c1.68-30.87,13-59.62,31.77-79.89,18.73,20.27,30.09,49,31.77,79.89Zm9.09-77C90.47,64.53,81.61,91.54,80.2,120H40.37A88.2,88.2,0,0,1,105.32,43ZM40.37,136H80.2c1.41,28.46,10.27,55.47,25.12,77A88.2,88.2,0,0,1,40.37,136Zm110.31,77c14.85-21.56,23.71-48.57,25.12-77h39.83A88.2,88.2,0,0,1,150.68,213Z"
+}) }); } function S({ type: e, color: t, image: l, size: r }) { return "custom"
+=== e && l ? /*#__PURE__*/o("img", { ...l, width: r, height: r }) :
+/*#__PURE__*/o("svg", { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 12
+12", width: r, height: r, children: /*#__PURE__*/o("path", { d: "M 2 4.5 L 6 8.5
+L 10 4.5", fill: "none", stroke: t, strokeWidth: 1.5, strokeLinecap: "round",
+strokeLinejoin: "round" }) }); } !function (e) { e.Default = "default", e.Custom
+= "custom"; }(e || (e = {})), function (t) { t.Default = "default", t.Custom =
+"custom"; }(t || (t = {})); /** * @framerSupportedLayoutWidth any-prefer-fixed *
+@framerSupportedLayoutHeight any * @framerDisableUnlink * @framerIntrinsicWidth
+120 * @framerIntrinsicHeight 34 */ let T = n(({ font: e, fillColor: t,
+textColor: r, icon: i, caret: n, options: { title: p, gap: m, border: v, hover:
+y, focus: w }, style: x, ...T }) => { var V, k; let $ = s(), { activeLocale: F,
+locales: N, setLocale: O } = a(), Z = null !== (V = null == F ? void 0 : F.id)
+&& void 0 !== V ? V : "default", L = u(Z), [z, A] = d(Z), B = N.find(e => e.id
+=== z); return L.current !== Z && (L.current = Z, z !== Z && A(Z)),
+/*#__PURE__*/l("div", { className: C, style: x, children:
+[/*#__PURE__*/o("label", { htmlFor: $, children: "Select Language" }),
+/*#__PURE__*/o("select", { id: $, value: z, onChange: function (e) { let t =
+e.target.value; A(t); let o = N.find(e => e.id === t); O(o); }, children:
+N.map(e => /*#__PURE__*/o("option", { value: e.id, children: e.name }, e.id))
+}), /*#__PURE__*/l("div", { className: "input", style: { ...e,
+"--framer-background-color": t, "--framer-color": r, ...g(T), ...b(T), ...c(v),
+...h(y), ...f(w), gap: m }, children: [i && /*#__PURE__*/o("div", { className:
+"icon", children: /*#__PURE__*/o(j, { ...i }) }), p && /*#__PURE__*/o("div", {
+className: "title", children: null !== (k = null == B ? void 0 : B.name) && void
+0 !== k ? k : "English" }), n && /*#__PURE__*/o("div", { className: "caret",
+children: /*#__PURE__*/o(S, { ...n }) })] })] }); }, [` .${C} { position:
+relative; } `, ` .${C} label { position: absolute; width: 1px; height: 1px;
+margin: -1px; overflow: hidden; white-space: nowrap; clip: rect(0 0 0 0);
+clip-path: inset(50%); } `, ` .${C} select { appearance: none; position:
+absolute; opacity: 0; top: 0; right: 0; bottom: 0; left: 0; cursor: inherit;
+width: 100%; } `, ` .${C} .input { display: flex; justify-content: center;
+align-items: center; height: 100%; pointer-events: none; overflow: hidden;
+background-color: var(--framer-background-color); color: var(--framer-color);
+border-color: var(--framer-border-color); } `, ` .${C} select:focus-visible +
+.input { outline: var(--framer-focus-outline, none); outline-offset:
+var(--framer-focus-outline-offset); } `, ` .${C}:hover .input {
+background-color: var(--framer-hover-background-color,
+var(--framer-background-color)); color: var(--framer-hover-color,
+var(--framer-color)); border-color: var(--framer-hover-border-color,
+var(--framer-border-color)); } `, ` .${C} .title { flex: 1 1 auto; white-space:
+nowrap; text-overflow: ellipsis; overflow: hidden; } `, ` .${C} .icon, .${C}
+.caret { display: flex; align-items: center; } `]); T.displayName = "Locale
+Selector", r(T, { font: { // @ts-ignore type: i.Font, controls: "extended",
+defaultFontType: "sans-serif", defaultValue: { fontSize: 14, lineHeight: "1.5em"
+} }, fillColor: { type: i.Color, title: "Fill", optional: !0, defaultValue:
+"#eee" }, textColor: { type: i.Color, title: "Text", defaultValue: "#000" },
+...y, ...w, icon: { type: i.Object, buttonTitle: "Size, Color", optional: !0,
+controls: { type: { type: i.Enum, title: "Icon", options: Object.values(e),
+optionTitles: ["Default", "Custom"], displaySegmentedControl: !0, defaultValue:
+"default" }, color: { type: i.Color, displaySegmentedControl: !0, defaultValue:
+"#000", hidden: e => "default" !== e.type }, image: { type: i.ResponsiveImage,
+title: "File", allowedFileTypes: ["jpg", "png", "svg"], hidden: e => "custom"
+!== e.type }, size: { type: i.Number, displayStepper: !0, defaultValue: 18 } }
+}, caret: { type: i.Object, buttonTitle: "Size, Color", optional: !0, controls:
+{ type: { type: i.Enum, title: "Icon", options: Object.values(t), optionTitles:
+["Default", "Custom"], displaySegmentedControl: !0, defaultValue: "default" },
+color: { type: i.Color, displaySegmentedControl: !0, defaultValue: "#000",
+hidden: e => "default" !== e.type }, image: { type: i.ResponsiveImage, title:
+"File", allowedFileTypes: ["jpg", "png", "svg"], hidden: e => "custom" !==
+e.type }, size: { type: i.Number, displayStepper: !0, defaultValue: 12 } },
+defaultValue: {} }, options: { type: i.Object, title: "Options", buttonTitle:
+"Border, Hover", controls: { title: { type: i.Boolean, defaultValue: !0 }, gap:
+{ type: i.Number, displayStepper: !0, defaultValue: 5 }, border: { type:
+i.Object, buttonTitle: "Color, Width", optional: !0, controls: p }, hover: {
+type: i.Object, buttonTitle: "Fill, Border", optional: !0, controls: v }, focus:
+{ type: i.Object, buttonTitle: "Color, Width", controls: m } } } }); export
+default T; export const __FramerMetadata__ = { "exports": { "default": { "type":
+"reactComponent", "name": "LocaleSelector", "slots": [], "annotations": {
+"framerSupportedLayoutWidth": "any-prefer-fixed", "framerContractVersion": "1",
+"framerSupportedLayoutHeight": "any", "framerIntrinsicHeight": "34",
+"framerDisableUnlink": "* @framerIntrinsicWidth 120" } }, "__FramerMetadata__":
+{ "type": "variable" } } }; //# sourceMappingURL=./LocaleSelector.map

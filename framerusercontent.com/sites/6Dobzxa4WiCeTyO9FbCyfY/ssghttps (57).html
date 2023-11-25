@@ -1,0 +1,29 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime"; import { useMemo
+} from "react"; import { addPropertyControls, ControlType } from "framer";
+import { motion } from "framer-motion"; import { containerStyles } from
+"https://framer.com/m/framer/default-utils.js@^0.45.0"; import {
+emptyStateStyle, stateParagraphStyle, stateTitleStyle } from
+"https://framer.com/m/framer/integrations-styles.js@0.2.0"; const instagramRegex
+= /^https?:\/\/www\.instagram\.com\/p\/([^\/]+)/; /** * INSTAGRAM * *
+@framerIntrinsicWidth 300 * @framerIntrinsicHeight 410 * *
+@framerSupportedLayoutWidth fixed * @framerSupportedLayoutHeight fixed */ export
+default function Instagram({ url, style, ...props }) { const id = useMemo(() =>
+{ var ref; const [, id] = (ref = url.match(instagramRegex)) !== null && ref !==
+void 0 ? ref : [null, null]; return id; }, [url]); return url && id ?
+/*#__PURE__*/_jsx(motion.iframe, { style: { ...containerStyles, ...style }, src:
+`https://www.instagram.com/p/${id}/embed/`, frameBorder: 0, width: "100%",
+height: "100%", scrolling: "no", ...props }) : /*#__PURE__*/_jsxs(motion.div, {
+style: { ...emptyStateStyle, ...style }, ...props, children:
+[/*#__PURE__*/_jsx("h1", { style: stateTitleStyle, children: "Instagram" }), url
+? /*#__PURE__*/_jsx("p", { style: stateParagraphStyle, children: "This post URL
+doesn’t seem correct." }) : /*#__PURE__*/_jsx("p", { style: stateParagraphStyle,
+children: "Set a post URL in the Properties." })] }); } ;
+addPropertyControls(Instagram, { url: { title: "URL", type: ControlType.String,
+placeholder: "https://www.instagram.com/p/***", defaultValue:
+"https://www.instagram.com/p/CteMsH8M67r/" } }); export const __FramerMetadata__
+= { "exports": { "default": { "type": "reactComponent", "name": "Instagram",
+"slots": [], "annotations": { "framerIntrinsicWidth": "300",
+"framerSupportedLayoutWidth": "fixed", "framerIntrinsicHeight": "410",
+"framerContractVersion": "1", "framerSupportedLayoutHeight": "fixed" } },
+"__FramerMetadata__": { "type": "variable" } } }; //#
+sourceMappingURL=./Instagram.map
